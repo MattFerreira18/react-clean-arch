@@ -1,23 +1,10 @@
-import HttpPostClient from "../../protocols/http/http-post-client";
+import { HttpPostClientSpy } from "../../test/mock-http-client";
 import RemoteAuthentication from "./remote-authentication";
 
 describe("remote authentication", () => {
   it("should be able to call HttpPostClient with correct URL", async () => {
-    /**
-     * Stuntman mock
-     */
-    class HttpClientSpy implements HttpPostClient {
-      url?: string;
-
-      async post(url: string): Promise<void> {
-        this.url = url;
-
-        return Promise.resolve();
-      }
-    }
-
     const url = "https://www.api.com.br";
-    const httpClientSpy = new HttpClientSpy();
+    const httpClientSpy = new HttpPostClientSpy();
     /**
      * S -> system
      * U -> under
