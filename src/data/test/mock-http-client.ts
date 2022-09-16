@@ -1,4 +1,6 @@
-import HttpPostClient from "data/protocols/http/http-post-client";
+import HttpPostClient, {
+  HttpPostParams,
+} from "../../data/protocols/http/http-post-client";
 
 /**
  * Stuntman mock
@@ -7,8 +9,11 @@ import HttpPostClient from "data/protocols/http/http-post-client";
 export class HttpPostClientSpy implements HttpPostClient {
   url?: string;
 
-  async post(url: string): Promise<void> {
+  body?: object;
+
+  async post({ url, body }: HttpPostParams): Promise<void> {
     this.url = url;
+    this.body = body;
 
     return Promise.resolve();
   }
