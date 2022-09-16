@@ -5,12 +5,14 @@
   "author": "MattFerreira18 <matheusferreira.dev@gmail.com>",
   "license": "MIT",
   "scripts": {
+    "lint": "eslint ./src/** --fix",
     "test": "jest --passWithNoTests",
     "test:watch": "npm test -- --watch",
     "test:staged": "npm test -- --findRelatedTests",
     "test:ci": "npm test -- --coverage"
   },
   "devDependencies": {
+    "@faker-js/faker": "^7.5.0",
     "@types/jest": "^29.0.2",
     "@types/node": "^18.7.18",
     "@typescript-eslint/eslint-plugin": "^5.13.0",
@@ -28,5 +30,6 @@
     "lint-staged": "^13.0.3",
     "ts-jest": "^29.0.1",
     "typescript": "*"
-  }
+  },
+  "dependencies": {}
 }
